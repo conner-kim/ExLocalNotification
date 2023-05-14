@@ -36,7 +36,7 @@ extension UNUserNotificationCenter {
         
         // Request 생성
         let request = UNNotificationRequest(
-            identifier: NotificationRequestType.taking.rawValue,
+            identifier: NotificationRequestType.bloodTypeCheck.rawValue,
             content: notificationContent,
             trigger: nil
         )
@@ -59,7 +59,7 @@ extension UNUserNotificationCenter {
         notificationContent.userInfo = ["SCREEN": "PUSH_LIST"]
         
         let request = UNNotificationRequest(
-            identifier: NotificationRequestType.taking.rawValue,
+            identifier: NotificationRequestType.bloodTypeCheck.rawValue,
             content: notificationContent,
             trigger: nil
         )

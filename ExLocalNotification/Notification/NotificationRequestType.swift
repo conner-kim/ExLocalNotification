@@ -9,5 +9,5 @@ import Foundation
 
 
 enum NotificationRequestType: String {
-    case taking = "TAKING"
+    case bloodTypeCheck = "BLOOD_TYPE_CHECK"
 }

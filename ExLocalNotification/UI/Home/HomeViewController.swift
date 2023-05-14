@@ -20,13 +20,17 @@ class HomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        print("viewWillAppear")
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        print("viewDidAppear")
         
         if let bloodType = UserDefaults.standard.string(forKey: "bloodType") {
             self.bloodTypeLabel.text = "혈액형: \(bloodType)"
+        } else {
+            self.bloodTypeLabel.text = "혈액형을 검사하기 위해 알림에서 확인을 눌러주세요😆😆"
         }
     }
     
@@ -34,7 +38,7 @@ class HomeViewController: UIViewController {
     // MARK: - User Interaction
     // 즉시 전송 클릭
     @IBAction func didTapSendImmediatelyButton(_ sender: Any) {
-        userNotificationCenter.sendPusnCustomAction(title: "푸시 즉시 전송", body: "푸시테스트중입니다 하하하하하하")
+        userNotificationCenter.sendPusnCustomAction(title: "혈액형 조회", body: "내 혈액형은!!??")
     }
     
     // 5초 후 전송 클릭

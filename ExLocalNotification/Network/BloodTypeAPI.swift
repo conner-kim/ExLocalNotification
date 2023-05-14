@@ -10,9 +10,7 @@ import Alamofire
 
 
 class BloodTypeAPI {
-    static var shared = BloodTypeAPI()
-    
-    func load() {
+    static func load() {
         
         let url = "https://random-data-api.com/api/v2/blood_types"
 

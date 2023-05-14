@@ -11,7 +11,6 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
@@ -74,16 +73,16 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         
         if let takeMedicineId = userInfo["TAKE_MEDICINE_ID"] as? Int {
             switch response.actionIdentifier {
-            case NotificationActionType.taking.rawValue:
-                print("복용함")
-                
-                BloodTypeAPI.shared.load()
-                break
-            case NotificationActionType.notTaking.rawValue:
-                print("미복용")
-                break
+            case NotificationActionType.accept.rawValue:
+                print("혈액형 검사하기")
+                DispatchQueue.global(qos: .background).async {
+                    BloodTypeAPI.load()
+                }
+            case NotificationActionType.decline.rawValue:
+                print("혈액형 검사안함")
+                UserDefaults.standard.removeObject(forKey: "bloodType")
             default:
-                break
+                UserDefaults.standard.removeObject(forKey: "bloodType")
             }
         }
         completionHandler()

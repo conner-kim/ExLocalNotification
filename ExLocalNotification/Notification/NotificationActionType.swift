@@ -10,17 +10,17 @@ import UserNotifications
 
 
 enum NotificationActionType: String, CaseIterable {
-    case taking = "ACTION_TAKING"
-    case notTaking = "ACTION_NOT_TAKING"
+    case accept = "ACTION_ACCEPT"
+    case decline = "ACTION_DECLINE"
 }
 
 extension NotificationActionType {
     func toString() -> String {
         switch self {
-        case .taking:
-            return "복용함"
-        case .notTaking:
-            return "복용안함"
+        case .accept:
+            return "확인oo"
+        case .decline:
+            return "확인xx"
         }
     }
     

@@ -9,5 +9,5 @@ import Foundation
 
 
 enum NotificationCategoryType: String {
-    case check = "TAKE_MEDICINE_CHECK"
+    case check = "CHECK"
 }
