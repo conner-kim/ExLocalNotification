@@ -17,7 +17,7 @@ class BloodTypeAPI {
         // Alamofire로 API 요청 보내기
         AF.request(url, method: .get, encoding: JSONEncoding.default)
             .validate(statusCode: 200..<300)
-            .responseData{ response in
+            .responseData(queue: DispatchQueue.global(qos: .background)){ response in
                 switch response.result {
                 case .success(let data):
                     NetworkUtil.showData(pData: data)
